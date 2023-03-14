@@ -24,23 +24,23 @@ to_rub({Cur, _}) ->
 to_rub2(Arg) ->
   Result =
     case Arg of
-      {usd, Amount} ->
+      {usd, Amount} when is_integer(Amount), Amount > 0 ->
         io:format("Convert ~p to rub, amount ~p~n", [usd, Amount]),
         {ok, 75.5 * Amount};
-      {euro, Amount} ->
+      {euro, Amount} when is_integer(Amount), Amount > 0->
         io:format("Convert ~p to rub, amount ~p~n", [euro, Amount]),
         {ok, 80 * Amount};
-      {lari, Amount} ->
+      {lari, Amount} when is_integer(Amount), Amount > 0->
         io:format("Convert ~p to rub, amount ~p~n", [lari, Amount]),
         {ok, 29 * Amount};
-      {peso, Amount} ->
+      {peso, Amount} when is_integer(Amount), Amount > 0->
         io:format("Convert ~p to rub, amount ~p~n", [peso, Amount]),
         {ok, 3 * Amount};
-      {krone, Amount} ->
+      {krone, Amount} when is_integer(Amount), Amount > 0->
         io:format("Convert ~p to rub, amount ~p~n", [krone, Amount]),
         {ok, 10 * Amount};
       Error ->
-        io:format("Can’t convert to rub, error ~p~n", [Error]),
+        io:format("Can't convert to rub, error ~p~n", [Error]),
         {error, badarg}
     end,
   io:format("Converted ~p to rub, amount ~p, Result ~p~n", [element(1,Arg), element(2,Arg), Result]),
@@ -48,22 +48,22 @@ to_rub2(Arg) ->
 
 to_rub3(Arg) ->
     case Arg of
-      {usd, Amount} ->
+      {usd, Amount} when is_integer(Amount), Amount > 0->
         io:format("Convert ~p to rub, amount ~p~n", [usd, Amount]),
         {ok, 75.5 * Amount};
-      {euro, Amount} ->
+      {euro, Amount} when is_integer(Amount), Amount > 0->
         io:format("Convert ~p to rub, amount ~p~n", [euro, Amount]),
         {ok, 80 * Amount};
-      {lari, Amount} ->
+      {lari, Amount} when is_integer(Amount), Amount > 0->
         io:format("Convert ~p to rub, amount ~p~n", [lari, Amount]),
         {ok, 29 * Amount};
-      {peso, Amount} ->
+      {peso, Amount} when is_integer(Amount), Amount > 0->
         io:format("Convert ~p to rub, amount ~p~n", [peso, Amount]),
         {ok, 3 * Amount};
-      {krone, Amount} ->
+      {krone, Amount} when is_integer(Amount), Amount > 0->
         io:format("Convert ~p to rub, amount ~p~n", [krone, Amount]),
         {ok, 10 * Amount};
       Error ->
-        io:format("Can’t convert to rub, error ~p~n", [Error]),
+        io:format("Can't convert to rub, error ~p~n", [Error]),
         {error, badarg}
     end.
