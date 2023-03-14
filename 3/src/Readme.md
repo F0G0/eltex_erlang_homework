@@ -1,4 +1,4 @@
-2> c("src/converter.erl"). 
+2> c("src/converter.erl").
 {ok,converter}
 3> converter:to_rub({usd, 100}).
 Convert usd to rub, amount 100
